@@ -1,0 +1,26 @@
+<div class='card'>
+    
+    <div class="spinner-border" role="status" *ngIf="carregando">
+        <span class="sr-only">Loading...</span>
+    </div>
+    
+    <div *ngIf="erroCarregamento">
+        <h2>Erro!</h2>
+        <button (click)="carregarTransacoes()">Tentar novamente</button>
+    </div>
+    
+    <div>
+        <button (click)="pagAnterior()" [disabled]="pagina === 1">&lt;</button>
+        Pagina atual: {{ pagina }}
+        <button (click)="proxPagina()">&gt;</button>
+    </div>
+    
+    <div *ngIf="!carregando && !erroCarregamento">
+        <div *ngFor="let transacao of transacoes">
+            <p>{{ transacao.data | date:'short' }}</p>
+            <p>{{ transacao.id | number }}  {{ transacao.descricao }}   {{ transacao.valor | currency:'BRL' }}</p>
+            <p>{{ transacao.conta | number:'bigint' }}    {{ transacao.planoConta }}   {{ transacao.tipo }}</p>
+            <hr>
+        </div>
+    </div>
+</div>

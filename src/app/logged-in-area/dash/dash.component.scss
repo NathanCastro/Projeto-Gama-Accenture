@@ -1,0 +1,138 @@
+.card-container{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    
+}
+.card-body{
+    margin-left: 35px;
+    margin-top: 5px;
+    
+}
+
+
+// Cards 
+.car_one{
+    height: 255px;
+    width: 407px;
+    background: white;
+    margin-top: 10px;
+    border-radius: 5px;
+    
+}
+.car_two{
+    height: 255px;
+    width: 407px;
+    background: white;
+    margin-left: 80px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.card_tree{
+    height: 395px;
+    width: 895px;
+    background: white;
+    margin-top: 10px;
+    border-radius: 5px;
+    margin-top: 40px;
+}
+// secction header
+._header_card{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+._header_card p{
+    margin-top: 15px;
+    margin-left: 35px;
+    font-size: 18px;
+    color: #9B9B9B;
+}
+
+//secction span 
+.secction-span{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.secction-span label{
+    font-size: 18px;
+    color: #9B9B9B;
+}
+
+.secction-span span{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+//footer card
+.footer-card{
+    margin-top: 20px;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer-card label{
+    font-size: 18px;
+    color: #9B9B9B;
+}
+
+.footer-card span{
+    font-size: 30px;
+    color: #68DE5A;
+    font-weight: 700;
+}
+
+//lancamentos
+.lancamentos.span{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+@media (max-width:1208px){
+    .car_two{
+        margin-left: 40px;
+       
+    }
+    .card_tree{
+        width: 850px;
+    }
+}
+
+@media (max-width:1096px){
+    .car_two{
+        margin-left: 10px;
+    }
+    .card_tree{
+        width: 820px;
+    }
+}
+
+@media (max-width:913px){
+    .car_two{
+        margin-left: 10px;
+    }
+    .card_tree{
+        width: 735px;
+    }
+    .footer-card label{
+        font-size: 15px;
+        color: #9B9B9B;
+    }
+    
+    .footer-card span{
+        font-size: 25px;
+        color: #68DE5A;
+        font-weight: 700;
+    }
+}
+
+@media (max-width: 886px){
+    .card-container{
+        flex-direction: column;
+    }
+}

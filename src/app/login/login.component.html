@@ -1,0 +1,53 @@
+<app-header></app-header>
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h1 class="card-title">Faça seu login</h1>
+
+            <form [formGroup]="loginForm" class="login-form mb-4">
+                <div class="form-group">
+                    <input 
+                        type="text"
+                        id="usuario" 
+                        class="form-control input-default" 
+                        placeholder="Digite seu usuário"
+                        formControlName="usuario"
+                        [class.is-invalid]="exibeErro('usuario')">
+                        <p *ngIf="exibeErro('usuario')" class="invalid-feedback">Usuário inválido</p>
+                </div>
+
+                <div class="form-group">
+                    <input 
+                        type="password" 
+                        id="senha"
+                        class="form-control input-default" 
+                        placeholder="Digite sua senha"
+                        formControlName="senha"
+                        [class.is-invalid]="exibeErro('senha')">
+                        <p *ngIf="exibeErro('senha')" class="invalid-feedback">Senha inválida</p>
+                </div>
+                
+                <button class="btn button-default" 
+                    (click)="onSubmit()" 
+                    [disabled]="(!loginForm.controls.usuario.value || !loginForm.controls.senha.value)  && !isLoading">
+                    
+                    <span>Continuar </span>
+                    <i class="fas fa-arrow-right" *ngIf="!isLoading"></i>
+                    <div class="spinner-border spinner-border-sm text-light" role="status" *ngIf="isLoading">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </button>
+            </form>
+
+            <div class="card__footer">
+                <div class="card__link">
+                    <a routerLink="/recoverypass"> Esqueci minha senha > </a>
+                </div>
+                <div class="card__link">
+                    <a routerLink="/home"> Ainda não sou cliente > </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

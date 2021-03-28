@@ -1,0 +1,130 @@
+<app-header></app-header>
+
+<div class="home container">
+    <section class="home__register container row">
+        <div class="home__register-description col-xs-12 col-sm-12 col-md-6 col-lg-6"> <!---->
+            <h2 class="home__titulo1"> Gama Bank é um projeto de nossos alunos.</h2><br>
+            <h2 class="home__titulo1">Já tem conta? </h2>
+            
+            <div class="mt-4 mb-5">
+                <button class="btn btn-primary home__radius" (click)="redirecionarParaLogin()"> Acessar
+                    <img class="home__vector" src="../../assets/images/seta.svg" />
+                </button>
+            </div>                       
+        </div>
+        <div class="home__formulario  col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <form [formGroup]="cadastro"  class="home__fml"  >                    
+                <span class="home__txt-titulo">Peça sua conta e cartão de crédito do Gama Bank</span>
+
+                <div class="form-group">
+                    <input type="text" class="form-control border-bottom"
+                    id="cpf" name="cpf"  aria-describedby="cpflHelp"
+                    autocompçete="off" maxlength="11" placeholder="Digite seu CPF"
+                    formControlName="cpf"
+                    [class.is-invalid]="exibeErro('cpf')">
+                    <p *ngIf="exibeErro('cpf')" class="invalid-feedback"></p>                
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="login"
+                    name="login" placeholder="Escolha um nome de usuário"
+                    formControlName="login"
+                    [class.is-invalid]="exibeErro('login')">
+                    <p *ngIf="exibeErro('login')" class="invalid-feedback"></p>
+                    
+
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control"  id="nomeCompleto"
+                    name="nomeCompleto" placeholder="Nome Completo"
+                    formControlName="nomeCompleto" 
+                    [class.is-invalid]="exibeErro('nomeCompleto')">
+                    <p *ngIf="exibeErro('nomeCompleto')" class="invalid-feedback"></p>
+                    
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="password1"
+                    name="password1" placeholder="Senha"
+                    formControlName="senha" 
+                    [class.is-invalid]="exibeErro('senha')" >
+                    <p *ngIf="exibeErro('senha')" class="invalid-feedback"></p>                
+                </div>
+
+               <div class="form-group">
+                    <input type="password" class="form-control" id="confirmPassword"
+                    name="confirmPassword" placeholder="Confirme sua senha"
+                    [class.is-invalid]="exibeErro('confirmPassword')"
+                    formControlName="confirmacaoSenha">
+                    <p *ngIf="exibeErro('confirmPassword')" class="invalid-feedback"></p>
+                    <p *ngIf="!senhaValida" class="invalid-password">Senhas não combinam</p> 
+                </div>
+                
+                <button (click)="onSubmit()"  class="btn button-default home__continua" [disabled]="cadastro.invalid">
+                    <span class="home__txt-btn" >Continuar  </span>              
+                    <i class="fas fa-arrow-right fa-1x mt-1" *ngIf="cadastro.invalid"></i>                                       
+                </button>
+            </form>
+        </div>
+    </section>
+    <section class="home__benefits container-fluid d-flex">
+        
+       <div class="home__benefits-primeiro col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <h3 class="home__titulo2">Conta digital do Gama Academy</h3>
+            <img class="img-fluid home__img-primeira" src="../../assets/images/app-bg 1.svg">
+            
+            <div class="pl-1 home__subtitulo">
+                <p class="home__subtitulo1">
+                    Rende mais que a poupança,<br>
+                    sem taxa de manutenção<br>
+                    nem tarifas escondidas.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="home__benefits-segundo col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <h3 class="home__titulo3">Cartão de Crédito</h3>
+            <img class="img-fluid home__img-segundo " src="../../assets/images/app-bg 2.svg">
+            <div class="pl-1 home__subtitulo">
+                <p class="home__subtitulo2">
+                    Rende mais que a poupança,<br>
+                    sem taxa de manutenção<br>
+                    nem tarifas escondidas.
+                </p>
+            </div>
+        </div>   
+    </section>
+
+    <section class="home__annuity d-flex">
+        <div class="home__annuity-primeiro col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <h2 class="section__title">Zero anuidade</h2>
+            <p>Burocraria custa caro. Somos eficientes, </p>
+              <p> para você não ter que pagar tarifas.</p> 
+            
+        </div>
+        <div class="home__annuity-segundo col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <span>0,00</span>
+        </div>
+    </section>
+
+    <section class="home__end-complexity d-flex">
+        <div class="home__end-complexity-unica">
+            <h2 class="home__title-unica">O fim da complexidade</h2>
+            <p>Para quem sabe que tecnologia e design</p>
+            <p>são melhores do que agência e papelada.
+            </p>
+        </div>
+    </section>
+
+    <section class="home__invite d-flex">
+        <div class="home__invite-primeira col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <h2 class="home__title-invite">Simplifique sua vida. Peça seu convite.</h2>
+            <p>GamaAcademy Bank Line S.A. - CNPJ 00.000.000/0000-00</p>
+            <p>Rua Fictícia, 999 - 00000-000 - São Paulo, SP</p>
+            <p>Este é um projeto de avaliação | GamaAcademy | Accenture | 2021</p>
+            
+        </div>
+        <div class="home__invite-segunda col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <img class="img-fluid home__celphone" src="../../assets/images/pngkey 1.svg">
+        </div>
+    </section>
+</div>

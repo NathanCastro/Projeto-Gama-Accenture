@@ -1,0 +1,52 @@
+.navbar {
+    background-color: var(--color-bg-green);
+    height: 120vh;
+    max-width: 151px;
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0;
+}
+
+.nav-item {
+    background-color: var(--color-bg-primary);
+    max-width: 91px;
+    max-height: 91px;
+    border-radius: 5px;
+    margin: 8px;
+
+}
+
+.nav-item a {
+    position: relative;
+    color: var(--color-bg-white);
+    text-decoration: none;
+}
+
+.nav-link {
+    display: block;
+    padding: 8px;
+    position: relative;
+    font-size: 14px;
+    font-weight: var(--font-weight-bold);
+
+    &__description {
+        display: block;
+        margin-top: 1.5em;
+    }
+}
+
+.navbar__logo {
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+@media (max-width: 320px) {
+    .navbar__logo {
+        margin-top: 1em;
+        margin-bottom: 0;
+    }
+}
+

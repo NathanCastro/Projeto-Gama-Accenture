@@ -1,0 +1,17 @@
+.card {
+    button {
+        background: var(--color-bg-green);
+        color: var(--color-bg-white);
+    }
+
+    &__link {
+        margin: 0.5em;
+    }
+
+    &__footer a {
+        font-size: 0.9em;
+        color: #8C52E5;
+        text-decoration: none;
+        font-weight: var(--font-weight-medium);
+    }
+}

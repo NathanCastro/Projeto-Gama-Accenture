@@ -1,0 +1,70 @@
+@import 'bootstrap';
+@import '~ngx-toastr/toastr';
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../../assets/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+}
+
+body, h1, h2 {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: var(--color-bg-primary);
+    font-family: 'Roboto', sans-serif;
+}
+
+.card {
+    background-color: var(--color-bg-card);
+    max-width: 455px;
+    max-height: 422px;
+    border-radius: 8px;
+    display: grid;
+    grid-gap: 15px;
+    justify-content: center;
+    margin: 5em auto;
+    text-align: center;
+    padding: 1.5em;
+
+    &-title {
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+}
+
+.button-default {
+    border-radius: 20px;
+    width: 95%;
+    border-color: transparent;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.input-default {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: solid;
+    border-bottom-color: #b9b9b9;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.input-default:focus, textarea:focus {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+@media (max-width: 480px) {
+    .card {
+        margin: 1em auto;
+        max-width: 95%;
+    }
+}
